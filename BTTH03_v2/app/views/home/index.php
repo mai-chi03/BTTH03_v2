@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h3 class="text-center text-uppercase text-success my-3">QUẢN LÝ THƯ VIỆN</h3>
-        <a href="<?= DOMAIN.'/views/patient/add.php'; ?> "class ='btn btn-success'>Thêm mới</a>
+        <a href=""class ='btn btn-success'>Thêm mới</a>
         <table class="table">
   <thead>
     <tr>
@@ -24,6 +24,9 @@
   </thead>
   <tbody>
     <?php
+        require_once('../../services/SachService.php');
+        $sachService = new SachService();
+        $sachs=$sachService->getAllSachs();
         foreach ($sachs as $sach){
      ?>
      <tr>
@@ -32,10 +35,10 @@
       <td><?= $sach->getnamXuatBan();?></td>
       <td><?= $sach->getidTacGia();?></td>
       <td>
-        <a href="<?= DOMAIN.'/app/views/patient/edit.php?id='.$patient->getId(); ?>"><i class="bi bi-pencil"></i></a>
+        <a href=""><i class="bi bi-pencil"></i></a>
         </td>
         <td>
-        <a href="<?= DOMAIN.'/app/views/patient/edit.php?id='.$patient->getId(); ?>"><i class="bi bi-trash"></i></a>
+        <a href=""><i class="bi bi-trash"></i></a>
         </td>
 
     </tr>
